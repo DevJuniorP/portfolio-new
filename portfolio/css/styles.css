@@ -8,7 +8,6 @@
     --clr-black-3: #121214;
     --clr-black-4: #13131F;
     --clr-text: #828282;
-    --clr-text-2: #898989;
     --clr-white-1: #fff;
     --clr-white-2: #e5e5e5;
     --clr-purple: #633BBC;
@@ -448,50 +447,109 @@ header ul li a:hover{
 
 /* DARK AND LIGHT */
 
-#home.light{
-    background: var(--clr-white-2);
-}
-
-.checkbox{
-    opacity: 0;
-    position: absolute;
-}
-
-.label{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: var(--clr-white-1);
-    border-radius: 50px;
-    cursor: pointer;
-    padding: 5px;
-    color: var(--clr-black-4);
-    transform: scale(1.6);
-}
-
-.label .ball{
-    background: var(--clr-text);
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: 22px;
-    width: 22px;
-
-    transform: translateY(0px);
-    transition: transform 0.2s linear;
-}
-
-.checkbox:checked + .label .ball{
-    transform: translateY(24px);
-}
 
 .dark_light{
     position: fixed;
-    bottom: 2em;
-    right: 2em;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: var(--clr-black-2);
+    border-radius: 50%;
+    color: var(--clr-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-size: 2em;
 }
 
+.dark_light ion-icon:nth-child(2){
+    display: none;
+}
+
+body.light{
+    background-color: var(--clr-white-2);
+}
+
+body.light .section__titulo{
+    color: var(--clr-black-4);
+}
+
+body.light .dark_light ion-icon:nth-child(2){
+    display: block;
+}
+
+body.light .dark_light ion-icon:nth-child(1){
+    display: none;
+}
+
+body.light header{
+    background: var(--clr-black-4);
+}
+
+body.light header .logo span {
+    color: var(--clr-green);
+}
+
+body.light #home .home__content h2{
+    color: var(--clr-black-4);
+}
+
+body.light #home .home__content p{
+    color: var(--clr-black-3);
+}
+
+body.light .home__content-link{
+    border-color: var(--clr-black-3);
+    color: var(--clr-black-4);
+}
+
+body.light .sobre__content p{
+    color: var(--clr-black-3);
+}
+
+body.light .sobre__habs-titulo{
+    color: var(--clr-black-2);
+}
+
+body.light .porfolio__content-titulo{
+    color: var(--clr-black-2);
+}
+
+body.light .contato__single p{
+    color: var(--clr-black-3);
+}
+
+body.light .contato__single p{
+    color: var(--clr-black-2);
+}
+
+body.light footer{
+    color: var(--clr-black-4);
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--clr-green);
+    border-radius: 80px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #30fe6a63;
+}
 
 /* FOOTER */    
 

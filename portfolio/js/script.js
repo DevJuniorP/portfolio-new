@@ -1,5 +1,11 @@
 let menuToggle = document.querySelector(".menuToggle");
 let header = document.querySelector("header");
+let body = document.querySelector('body');
+let darkLight = document.querySelector(".dark_light");
+
+darkLight.onclick = function() {
+    body.classList.toggle('light')
+}
 
 let typedEffect = new Typed(".typed", {
     strings : ["Junior Peron", "Dev Front-End"],
