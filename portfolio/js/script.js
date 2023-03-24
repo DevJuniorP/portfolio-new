@@ -1,11 +1,12 @@
 let menuToggle = document.querySelector(".menuToggle");
 let header = document.querySelector("header");
+
 let typedEffect = new Typed(".typed", {
     strings : ["Junior Peron", "Dev Front-End"],
     loop : true,
-    typedSpeed : 100,
+    typedSpeed : 1000,
     backSpeed : 50,
-    backDelay: 100,
+    backDelay: 1000,
 })
 
 menuToggle.onclick = function () {

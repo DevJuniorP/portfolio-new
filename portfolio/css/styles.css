@@ -8,7 +8,9 @@
     --clr-black-3: #121214;
     --clr-black-4: #13131F;
     --clr-text: #828282;
+    --clr-text-2: #898989;
     --clr-white-1: #fff;
+    --clr-white-2: #e5e5e5;
     --clr-purple: #633BBC;
     --clr-green: #30fe6c;
 
@@ -46,6 +48,7 @@ a{
 
 body{
     background: var(--clr-black-4);
+    transition: 0.5s;
 }
 
 /* HEADER */
@@ -442,6 +445,53 @@ header ul li a:hover{
     color: var(--clr-text);
     font-size: 1.2em;
 }
+
+/* DARK AND LIGHT */
+
+#home.light{
+    background: var(--clr-white-2);
+}
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--clr-white-1);
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--clr-black-4);
+    transform: scale(1.6);
+}
+
+.label .ball{
+    background: var(--clr-text);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+
+    transform: translateY(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateY(24px);
+}
+
+.dark_light{
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+}
+
 
 /* FOOTER */    
 
