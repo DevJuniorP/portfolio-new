@@ -62,8 +62,8 @@ header{
     align-items: center;
     z-index: 10000;
 
-    background: transparent;
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(6px);
 }
 
 header .logo{
@@ -151,7 +151,7 @@ header ul li a:hover{
         top: 83px;
         width: 100%;
         height: calc(100vh - 83px);
-        background-color: rgba(50, 50, 50, 0.9);
+        background-color: rgba(0, 0, 0, 0.20);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -177,28 +177,51 @@ header ul li a:hover{
     padding: 100px;
 }
 
-#home .content{
+#home .home__content{
     position: relative;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     gap: 10px;
     max-width: 650px;
     z-index: 10;
 }
 
-#home .content h2{
+#home .home__content h2{
     position: relative;
-    font-size: 5em;
+    font-size: 4.6em;
     color: var(--clr-green);
 }
 
-#home .content p{
+#home .home__content p{
     position: relative;
     color: var(--clr-text);
     font-size: 1.2em;
     line-height: 1.6em;
     font-family: var(--font-nunito);
+}
+
+.home__content-link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid var(--clr-green);
+    max-width: 180px;
+    padding: 15px 20px;
+    text-align: center;
+    color: var(--clr-white-1);
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.home__content-link:hover{
+    border: 2px solid var(--clr-white-1);
+    color: var(--clr-white-1);
+}
+
+.home__content-link ion-icon{
+    font-size: 1.5em;
 }
 
 #home .astronauta{
@@ -217,25 +240,21 @@ header ul li a:hover{
 
 @media (max-width: 900px) {
     #home{
-        padding: 150px 50px;
+        padding: 150px;
         flex-direction: column;
         padding-bottom: 0;
     }
 
-    #home .content h2{
+    #home .home__content h2{
         font-size: 4em;
     }
 
     #home .astronauta{
         position: relative;
-        margin-top: 5em;
+        margin: 6em 0 0 8em;
     }
 }
 /* SOBRE */
-
-#sobre{
-    visibility: hidden;
-}
 
 #sobre{
     position: relative;
@@ -253,7 +272,6 @@ header ul li a:hover{
     color: var(--clr-text);
     font-size: 1.2em;
     line-height: 1.6em;
-    text-align: center;
     font-family: var(--font-nunito);
 }
 
@@ -397,10 +415,11 @@ header ul li a:hover{
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    gap: 30px;
 }
 
 .contato__single{
-    max-width: 200px;
+    width: 200px;
     text-align: center;
 }
 
@@ -432,4 +451,121 @@ footer{
     align-items: center;
     color: var(--clr-white-1);
     font-size: 1.2em;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 900px) {
+    .section__titulo{
+        font-size: 2.8em;
+    }
+
+    #sobre, #portfolio{
+        padding: 150px;
+        padding-bottom: 60px;
+    }
+
+    #sobre .sobre__content p{
+        font-size: 1.1em;
+    }
+
+    .portfolio__single-container, .portfolio__duo-container{
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .section__titulo{
+        font-size: 2.1em;
+    }
+    
+    #home{
+        padding: 100px 100px 0 90px;
+    }
+
+    #home .content h2{
+        font-size: 2.8em;
+    }
+
+    #home .content p{
+        font-size: 1.1em;
+    }
+
+    #home .astronauta{
+        height: 60vh;
+    }
+
+    #sobre{
+        padding: 60px 90px 0 90px;
+    }
+
+    .sobre__habs-titulo{
+        font-size: 1.8em;
+    }
+
+    .sobre__habs{
+        gap: 30px;
+    }
+
+    #portfolio{
+        padding: 60px 60px 0 60px;
+    }
+
+    .porfolio__content-titulo{
+        font-size: 1.3em;
+    }
+
+
+    #contato .section__titulo h2{
+        text-align: center;
+    }
+
+    .contato__container{
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 400px) {
+    #home{
+        padding: 50px;
+    }
+
+    #home .astronauta{
+        height: 50vh;
+    }
+
+    #sobre{
+        padding: 40px;
+    }
+
+    #portfolio{
+        padding: 50px 30px;
+    }
+
+    .portfolio__content-single{
+        width: 350px;
+        height: 250px;
+    }
+
+    .portfolio__content-single .portfolio__single-img{
+        width: 340px;
+        height: 250px;
+    }
+
+    .portfolio__content-single .portfolio__single-img img{
+        width: 340px;
+        height: 250px;
+    }
+
+    .portfolio__content-single .portfolio__single-text{
+        width: 300px;
+        height: 300px;
+    }
+
+    footer{
+        font-size: 0.8em;
+    }
 }
